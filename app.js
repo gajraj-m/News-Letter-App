@@ -40,7 +40,7 @@ app.post("/", (req, res) => {
     const jsonData = JSON.stringify(data); // flatten it
     const options = {
       method: "POST",
-      auth: "dracula145:x9d52a5f94cd635417a0a227acfea8f5a-us14", // any string(username) : apikey
+      auth: "dracula145:9d52a5f94cd635417a0a227acfea8f5a-us14", // any string(username) : apikey
     };
 
     const request = https.request(url, options, function(respose){
@@ -59,4 +59,5 @@ app.post("/failure", (req,res) =>{
     res.redirect("/");
 })
 
+// we were locally running our server on port 3000 but heroku may choose any port .. so process.env.PORT
 app.listen(process.env.PORT || 3000, () => console.log("Server started on port 3000"));
